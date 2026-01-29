@@ -18,13 +18,27 @@ ReactGA.send("pageview");
 const App = () => {
   const userData = useSelector((state) => state.auth.userData);
   const dispatch = useDispatch();
-  const [authLoading, setAuthLoading] = useState(false);
-  const [dataLoading, setDataLoading] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setShowNavbar(true);
+      } else {
+        setShowNavbar(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
 
   useEffect(() => {
     if (!userData) return;  // Return early if no userId
-    setDataLoading(true);
+    setLoading(true);
 
     dbService.getPost(userData.$id)
       .then((data) => {
@@ -34,14 +48,13 @@ const App = () => {
         dispatch(removeDetails())
       })
       .finally(() => {
-        setDataLoading(false);
+        setLoading(false);
       });
   }, [userData]);
   // console.log(userData);
 
 
   useEffect(() => {
-    setAuthLoading(true)
     authService.getCurrentUser()
       .then((user) => {
         if (user) {
@@ -53,23 +66,23 @@ const App = () => {
       .catch((error) => {
         console.log("User can't be logged in, error in App.jsx", error.message)
       })
-      .finally(() => setAuthLoading(false))
   }, [])
 
 
-  return !authLoading ? (
-    <div className='font-Poppins bg-black text-gray-200'>
+  return (
+    <div className='font-Poppins bg-black text-white/90'>
       <ToastContainer position="top-right" autoClose={3000} />
-      <Navbar />
+      {/* Navbar controlled by scroll */}
+      <Navbar visible={showNavbar} />
+
       <main className='min-h-[200vh]'>
         <ScrollToTop />
         <Outlet />
       </main>
+
       <Footer />
     </div>
-  ) : <div className='font-Montserrat bg-black text-white w-screen h-screen flex justify-center items-center'>
-    <Loader2 className='w-8 animate-spin'/>
-  </div>
+  )
 }
 
 export default App

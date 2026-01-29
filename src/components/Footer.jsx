@@ -1,12 +1,14 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Instagram, Twitter, Facebook, UserCog } from "lucide-react";
-import Button1 from './Button1';
+import Button from './Button';
+
+
 
 const Footer = () => {
   const navigate = useNavigate();
   return (
-    <div className='border-t md:px-20 px-5'>
+    <div className='md:px-20 px-5 bg-gradient-to-b from-white/5 to-white/15'>
       <div className="footer-first py-20 flex gap-4 flex-col items-center text-xs">
         <div className='w-72'>
           <img src="/logo6.png" className='object-fill rounded-full' alt="" />
@@ -14,7 +16,7 @@ const Footer = () => {
         <h3 className='text-sm'>TAKE YOUR FIRST STEP TODAY</h3>
         <h1 className='font-medium'>START YOUR TRANSFORMATION</h1>
         <div className='flex gap-2 flex-col sm:flex-row'>
-          <Button1 onClick={() => navigate("/input")} >JOIN NOW</Button1>
+          <Button onClick={() => navigate("/input")} >JOIN NOW</Button>
         </div>
       </div>
 

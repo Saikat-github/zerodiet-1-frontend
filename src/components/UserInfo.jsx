@@ -47,11 +47,11 @@ const UserInfo = ({ userId }) => {
 
 
   return userDetails ? (
-    <div className="flex flex-col gap-6 pt-2 items-center min-h-screen">
-      <div className="bg-slate-400/20 shadow-lg rounded-lg px-8 py-2 w-full max-w-md">
+    <div className="flex flex-col gap-6 pt-2 items-center min-h-screen text-sm">
+      <div className="w-full max-w-md mt-4 text-center px-2">
         Thank You for choosing us, we'll contact you in 24 hours
       </div>
-      <div className="bg-slate-400/20 shadow-lg rounded-lg p-8 w-full max-w-md">
+      <div className="border border-white/20 shadow-xl shadow-white/15 rounded-lg p-8 w-full max-w-md">
         <h1 className="text-2xl font-bold mb-6 text-center">Your Details</h1>
         <div className="space-y-4">
           <p><strong className="">Name:</strong> {userDetails.applicantName}</p>
@@ -89,7 +89,7 @@ const UserInfo = ({ userId }) => {
       />
     </div>
   ) : (
-    <div className="text-lg text-center mt-6 mx-2">
+    <div className="text-lg text-center pt-6 mx-2">
       You haven't submitted your details yet. Please submit your details{" "}
       <Link className="text-blue-600" to="/input">Here</Link>
     </div>

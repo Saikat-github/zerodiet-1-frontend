@@ -1,6 +1,3 @@
-import React from 'react'
-import Button1 from '../Button1'
-import Button2 from '../Button2'
 import formimage2 from '../../assets/formimage-2.webp'
 import logo from '../../assets/logo6.png'
 import dumbbell from '../../assets/dumbbell-solid.svg'

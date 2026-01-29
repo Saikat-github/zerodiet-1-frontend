@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux';
 import { Home, DollarSign, User, LogOut } from "lucide-react";
 
 
-const Navbar = () => {
+const Navbar = ({ visible }) => {
     const [showBar, setShowBar] = useState(false);
     const navigate = useNavigate();
     const authStatus = useSelector((state) => state.auth.status);
@@ -55,26 +55,30 @@ const Navbar = () => {
 
 
     return (
-        <div className=' h-20 px-3 sm:px-20 flex justify-between items-center sticky top-0 z-10 py-12 text-gray-200 backdrop-blur-lg'>
-            <Link to='/' className='text-4xl w-28 h-28'>
-                <img src="/logo6.png" className='object-fill' alt="" />
-            </Link>
-            <div className="showBar flex md:gap-6 text-lg z-10">
-                <ul className={`navitems md:flex lg:gap-10 gap-2 ${showBar ? "flex flex-col gap-10 mt-48 py-6 px-2 bg-black z-10 backdrop-blur-md rounded-lg" : "hidden"}`}>
-                    {navOptions.map((item, idx) => (
-                        item.active && <li className=' transition px-4 py-2 hover:text-white cursor-pointer text-sm flex items-center gap-2' key={idx} onClick={() => onClickHandler(item.url)}>
-                            {item.icon}
-                            {item.name}
-                        </li>
-                    ))}
-                    {authStatus && <LogoutBtn setShowBar={setShowBar} />}
-                </ul>
-                {
-                    showBar ? <img src={cross} className='w-6 cursor-pointer md:hidden' alt="" onClick={() => setShowBar((prev) => !prev)} /> : <img src={hamburger} className='w-6 cursor-pointer  md:hidden' onClick={() => setShowBar((prev) => !prev)} />
-                }
+        <div
+            className={`h-20 px-3 sm:px-20 flex justify-between items-center backdrop-blur-md fixed top-0 w-full transition-all duration-300 z-50
+        ${visible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}
+      `}
+        >
+                <Link to='/' className='text-4xl w-28 h-28'>
+                    <img src="/logo6.png" className='object-fill' alt="" />
+                </Link>
+                <div className="showBar flex md:gap-6 text-lg z-10">
+                    <ul className={`navitems md:flex lg:gap-10 gap-2 ${showBar ? "flex flex-col gap-10 mt-48 py-6 px-2 bg-black shadow-xl shadow-white/20 z-10 backdrop-blur-md rounded-lg" : "hidden"}`}>
+                        {navOptions.map((item, idx) => (
+                            item.active && <li className=' transition px-4 py-2 hover:text-white cursor-pointer text-sm flex items-center gap-2' key={idx} onClick={() => onClickHandler(item.url)}>
+                                {item.icon}
+                                {item.name}
+                            </li>
+                        ))}
+                        {authStatus && <LogoutBtn setShowBar={setShowBar} />}
+                    </ul>
+                    {
+                        showBar ? <img src={cross} className='w-6 cursor-pointer md:hidden' alt="" onClick={() => setShowBar((prev) => !prev)} /> : <img src={hamburger} className='w-6 cursor-pointer  md:hidden' onClick={() => setShowBar((prev) => !prev)} />
+                    }
 
+                </div>
             </div>
-        </div>
     )
 }
 

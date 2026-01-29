@@ -12,39 +12,39 @@ const DetailsPane = () => {
             <h2 className='text-4xl font-medium mb-12 text-center'>This is My Story</h2>
             <div className='flex gap-12 md:gap-20 md:px-20 px-5 flex-col justify-center items-center'>
                 <div className='flex flex-col md:flex-row justify-center items-center gap-2 md:gap-10'>
-                    <img src={myImage3} className='max-w-md object-contain rounded-lg max-sm:w-60 h-80' alt="" />
+                    <img src={myImage3} className='max-w-md object-contain rounded-lg max-sm:w-60 h-80 shadow-xl shadow-white/15' alt="" />
                     <ArrowDown className='md:hidden' />
                     <ArrowRight className='max-md:hidden' />
-                    <img src={myImage4} className='max-w-md object-contain rounded-lg max-sm:w-60 h-80' alt="" />
+                    <img src={myImage4} className='max-w-md object-contain rounded-lg max-sm:w-60 h-80 shadow-xl shadow-white/15' alt="" />
                 </div>
-                <div className='flex flex-col md:flex-row justify-center items-center gap-2 md:gap-10'>
+                {/* <div className='flex flex-col md:flex-row justify-center items-center gap-2 md:gap-10'>
                     <img src={myImage1} className='max-w-md object-contain rounded-lg max-sm:w-60 h-[500px]' alt="" />
                     <ArrowDown className='md:hidden' />
                     <ArrowRight className='max-md:hidden' />
                     <img src={myImage2} className='max-w-md object-contain rounded-lg max-sm:w-60 h-[500px]' alt="" />
-                </div>
+                </div> */}
 
                 {/* Visit Instagram button */}
                 <a
                     href="https://www.instagram.com/saikaatsaha/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className='flex items-center gap-2 rounded-full px-4 py-1.5 text-sm transition-all duration-300 border border-white/30 bg-white/10 hover:bg-white/15'
+                    className='flex items-center gap-2 rounded-full px-4 py-1.5 text-sm transition-all duration-300 border border-white/20 hover:bg-white/5 shadow-xl shadow-white/5 text-white/85'
                 >
-                    <Instagram className="w-6 h-6 hover:scale-105 transition duration-200 text-pink-600" />
+                    <Instagram className="w-6 h-6" />
                     Visit My Instagram
-                    <ArrowRight className='text-gray-400'/>
+                    <ArrowRight className="w-6 h-6" />
                 </a>
 
-                <div className="details space-y-4 bg-slate-400/20 p-4 rounded">
+                <div className="details space-y-4 border border-white/20 shadow-xl shadow-white/10 p-6 rounded-lg text-xs sm:text-sm">
                     <h2 className='text-xl font-semibold'>I'M SAIKAT SAHA</h2>
-                    <p className='text-xs '>
+                    <p>
                         <span className='font-bold'>I wasn’t born with a great physique</span>, and from a young age, I wasn’t happy with how I looked. Growing up skinny, it always bothered me, and in my teenage years, I decided to do something about it. I wanted to build a body that I could feel confident about and be proud of. Over the past 3 years, I’ve dedicated myself to learning everything I could about fitness and health, and along the way, I fell in love with the process.
                     </p>
-                    <p className='mt-10 text-xs '>
+                    <p>
                         <span className='font-bold'>Fitness has never been the center of my life</span>, but it’s always been a part of it. Without having any real fitness role models, I experimented with all kinds of workouts and diets I came across online—some worked, some didn’t. All this while juggling my studies and work. Over 2.5 years, I learned how to balance everything and gradually understood the right way to build muscle and stay lean.
                     </p>
-                    <p className='mt-10 text-xs '>
+                    <p>
                         If there’s one lesson I’ve learned from these 2.5 years, it’s that consistency is key. You don’t need to revolve your life around fitness. Instead, find a routine that fits into your life.
 
                         <br />

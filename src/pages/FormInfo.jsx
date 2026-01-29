@@ -6,7 +6,7 @@ import dbService from '../appwrite/data';
 import { addDetails } from '../store/authSlice';
 import { toast } from 'react-toastify';
 import { MoveRight, MoveLeft, Loader2 } from 'lucide-react';
-import { Button1 } from '../components/index.js';
+import { Button } from '../components/index.js';
 
 const handleRedirect = () => {
     window.open('/pricing', '_blank');
@@ -159,7 +159,7 @@ const FormInfo = () => {
                         placeholder={question.name}
                         type='text'
                         {...register(question.name, { required: question.required })}
-                        className='text-black px-10 py-2 border border-black rounded-full outline-none lg:w-[70vh] xl:w-[80vh]'
+                        className='text-white/90 px-10 py-2 bg-transparent border-2 border-white/20 shadow-xl shadow-white/10 rounded-full outline-none lg:w-[70vh] xl:w-[80vh]'
                     />
                 ) : (
                     <div className='grid lg:grid-cols-2 grid-cols-1  gap-6 lg:px-20'>
@@ -167,7 +167,7 @@ const FormInfo = () => {
                             <button
                                 type="button"
                                 key={i}
-                                className={`px-10 py-4 border border-gray-400 rounded-full sm:w-80 w-64 text-sm transition-all duration-500 ${watch(question.name) === option ? "bg-red-700" : "hover:bg-red-700 hover"}`}
+                                className={`px-10 py-4 border-2 border-white/30 rounded-full sm:w-80 w-64 text-sm transition-all duration-500 ${watch(question.name) === option ? "bg-red-700" : "hover:bg-red-700 hover"}`}
                                 onClick={option === "No cancel my application" ? () => navigate("/") : () => onBtnClicked(option, question)}
                             >
                                 {option}
@@ -197,7 +197,7 @@ const FormInfo = () => {
                 <br />
                 <div className="flex justify-around w-full my-4">
                     {currQuestion > 0 && (
-                        <button type="button" className="border sm:px-12  hover:scale-105 transition p-2 rounded flex flex-row-reverse gap-2" onClick={handlePrev}>
+                        <button type="button" className="border border-white/20 sm:px-12  hover:scale-105 transition p-2 rounded flex flex-row-reverse gap-2" onClick={handlePrev}>
                             <span className='hidden sm:inline'>Previous</span>
                             <MoveLeft className='w-6' />
                         </button>
@@ -209,9 +209,9 @@ const FormInfo = () => {
                         </button>
                     )}
                     {currQuestion === questions.length - 1 && (
-                        <Button1 disabled={isSubmitting || userDetails} type="submit" className="flex gap-3 sm:px-12  hover:scale-105 transition p-2 rounded">
+                        <Button disabled={isSubmitting || userDetails} type="submit" className="flex gap-3 sm:px-12  hover:scale-105 transition p-2 rounded">
                              {loading ? <Loader2 className='animate-spin' /> : "Submit"}
-                        </Button1>
+                        </Button>
                     )}
                 </div>
             </form>

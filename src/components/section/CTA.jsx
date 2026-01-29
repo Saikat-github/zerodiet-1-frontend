@@ -1,10 +1,6 @@
-import React from 'react'
 import Card from './Card'
-import Button1 from '../Button1'
-import Button2 from '../Button2'
 import { useNavigate } from 'react-router-dom'
 import { Flame, Repeat, Dumbbell, HeartPulse, 
-    Home, LogOut, BadgeDollarSign, PhoneCall, Mail, LifeBuoy 
   } from "lucide-react";
 import CTAButtons from '../CTAButtons'
 

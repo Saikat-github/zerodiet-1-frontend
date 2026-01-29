@@ -12,8 +12,7 @@ import CTA from "./section/CTA";
 import UserInfo from "./UserInfo";
 import ScrollToTop from "./ScrollToTop";
 import ResetPassword from "./ResetPassword";
-import Button1 from "./Button1";
-import Button2 from "./Button2";
+import Button from "./Button";
 import StarryNight from "./util components/StarryNight";
 import CTAButtons from "./CTAButtons";
 import ConfirmationModal from "./util components/ConfirmationModal";
@@ -21,4 +20,4 @@ import ProtectedRoutes from "./ProtectedRoutes";
 
 
 
-export {Navbar, Footer, Login, Hero, LogoutBtn, SignUp, Input, Section, Card, DetailsPane, CTA, UserInfo, ScrollToTop, ResetPassword, Button1, Button2, StarryNight, CTAButtons, ConfirmationModal, ProtectedRoutes};
+export {Navbar, Footer, Login, Hero, LogoutBtn, SignUp, Input, Section, Card, DetailsPane, CTA, UserInfo, ScrollToTop, ResetPassword, Button, StarryNight, CTAButtons, ConfirmationModal, ProtectedRoutes};
