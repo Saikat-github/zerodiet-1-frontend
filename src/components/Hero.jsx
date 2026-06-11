@@ -20,7 +20,7 @@ const Hero = () => {
         </span>
 
         <span className='text-2xl xs:text-3xl flex gap-6 max-sm:mb-6 font-semibold'>
-          By Saikat Saha
+          By Kaushik Dutta
         </span>
 
         <CTAButtons />

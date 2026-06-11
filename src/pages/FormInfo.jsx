@@ -78,7 +78,7 @@ const FormInfo = () => {
         },
         {
             type: "button",
-            question: <p><span className='text-red-600'>*</span>Please Choose Your Plan, You don't have to pay now. <br /> (See pricing details on <Link className='text-blue-500' to="#" onClick={handleRedirect}>Pricing Page</Link> )</p>,
+            question: <p><span className='text-red-600'>*</span>Please Choose Your Plan, You don't have to pay now. <br /> (See pricing details on <Link className='text-blue-500' to="#" onClick={handleRedirect}>Pricing Page</Link>)</p>,
             options: ["Guaranteed: Lose 5-10 kg in 6 weeks (₹ 1999/mo)", "Muscle Building (₹ 1599/mo)", "Body Recomposition (₹ 1999/mo)"],
             name: "planChoosen"
         },

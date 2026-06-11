@@ -26,7 +26,7 @@ const DetailsPane = () => {
 
                 {/* Visit Instagram button */}
                 <a
-                    href="https://www.instagram.com/saikaatsaha/"
+                    href="https://www.instagram.com/kaushikdutta"
                     target="_blank"
                     rel="noopener noreferrer"
                     className='flex items-center gap-2 rounded-full px-4 py-1.5 text-sm transition-all duration-300 border border-white/20 hover:bg-white/5 shadow-xl shadow-white/5 text-white/85'
@@ -37,7 +37,7 @@ const DetailsPane = () => {
                 </a>
 
                 <div className="details space-y-4 border border-white/20 shadow-xl shadow-white/10 p-6 rounded-lg text-xs sm:text-sm">
-                    <h2 className='text-xl font-semibold'>I'M SAIKAT SAHA</h2>
+                    <h2 className='text-xl font-semibold'>I'M KAUSHIK DUTTA</h2>
                     <p>
                         <span className='font-bold'>I wasn’t born with a great physique</span>, and from a young age, I wasn’t happy with how I looked. Growing up skinny, it always bothered me, and in my teenage years, I decided to do something about it. I wanted to build a body that I could feel confident about and be proud of. Over the past 3 years, I’ve dedicated myself to learning everything I could about fitness and health, and along the way, I fell in love with the process.
                     </p>

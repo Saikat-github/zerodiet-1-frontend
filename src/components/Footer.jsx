@@ -27,10 +27,10 @@ const Footer = () => {
             <h1 className='font-semibold'>Contact Us</h1>
           </div>
           <p className='text-xs sm:text-sm'>Call : +91 9635473546</p>
-          <p className='text-xs sm:text-sm'>saikatservices@gmail.com</p>
+          <p className='text-xs sm:text-sm'>kaushikdutta@gmail.com</p>
           <p>
             <a
-              href="https://fitness-website-admin.vercel.app/login"
+              href="https://admin-zerodiet.vercel.app"
               className='text-xs sm:text-sm text-blue-600'
               target="_blank"
               rel="noopener noreferrer"
@@ -55,14 +55,14 @@ const Footer = () => {
               <Facebook className="w-6 h-6 hover:scale-105 transition duration-200 text-blue-600" />
             </a>
             <a
-              href="https://x.com/Saikaatsaha"
+              href="https://x.com/kaushikdutta"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Twitter className="w-6 h-6 hover:scale-105 transition duration-200 text-blue-400" />
             </a>
             <a
-              href="https://www.instagram.com/saikaatsaha/"
+              href="https://www.instagram.com/kaushikdutta/"
               target="_blank"
               rel="noopener noreferrer"
             >
