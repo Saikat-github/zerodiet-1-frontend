@@ -64,7 +64,7 @@ export class DbService {
                 id
             )
         } catch (error) {
-            throw error            
+            throw new Error("Error fetching post: " + error.message);
         }
     }
 

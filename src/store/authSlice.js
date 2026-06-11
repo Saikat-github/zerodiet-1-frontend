@@ -1,10 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { set } from "react-hook-form";
 
 
 const initialState = {
     status: false,
     userData: null,
-    userDetails: null
+    userDetails: null,
+    loader: true
 };
 
 const authSlice = createSlice({
@@ -24,10 +26,13 @@ const authSlice = createSlice({
         },
         removeDetails: (state) => {
             state.userDetails = null;
+        },
+        changeLoader: (state, action) => {
+            state.loader = action.payload
         }
     }
 })
 
-export const {login, logout, addDetails, removeDetails} = authSlice.actions;
+export const {login, logout, addDetails, removeDetails, changeLoader} = authSlice.actions;
 
 export default authSlice.reducer;

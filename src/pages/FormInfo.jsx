@@ -180,7 +180,11 @@ const FormInfo = () => {
     };
 
 
-    if (userDetails) return (<div className='my-20 font-semibold text-center'>You have already submitted your details, to add new details please delete your info from <span className='text-blue-600 cursor-pointer' onClick={() => navigate('/account')}>Account</span> Page</div>)
+    if (userDetails) return (<div className='h-screen flex justify-center  items-center font-semibold text-center mx-4'>
+        <p>
+            You have already submitted your details, to add new details please delete your info from <span className='text-blue-600 cursor-pointer' onClick={() => navigate('/account')}>Account</span> Page
+        </p>
+    </div>)
 
     return !error ? (
         <div className='lg:px-32 px-4 py-10'>
@@ -205,12 +209,12 @@ const FormInfo = () => {
                     {currQuestion < questions.length - 1 && (
                         <button type="button" className="sm:px-12  hover:scale-105 transition p-2 rounded  bg-red-600 flex  gap-2" onClick={handleNext}>
                             <span className='hidden sm:inline'>Next</span>
-                            <MoveRight className='w-6'/>
+                            <MoveRight className='w-6' />
                         </button>
                     )}
                     {currQuestion === questions.length - 1 && (
                         <Button disabled={isSubmitting || userDetails} type="submit" className="flex gap-3 sm:px-12  hover:scale-105 transition p-2 rounded">
-                             {loading ? <Loader2 className='animate-spin' /> : "Submit"}
+                            {loading ? <Loader2 className='animate-spin' /> : "Submit"}
                         </Button>
                     )}
                 </div>

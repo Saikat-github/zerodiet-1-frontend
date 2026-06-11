@@ -89,9 +89,11 @@ const UserInfo = ({ userId }) => {
       />
     </div>
   ) : (
-    <div className="text-lg text-center pt-6 mx-2">
-      You haven't submitted your details yet. Please submit your details{" "}
-      <Link className="text-blue-600" to="/input">Here</Link>
+    <div className="h-screen flex justify-center items-center font-semibold mx-4">
+      <p>
+        You haven't submitted your details yet. Please submit your details{" "}
+        <Link className="text-blue-600" to="/input">Here</Link>
+      </p>
     </div>
   );
 };

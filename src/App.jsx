@@ -3,7 +3,7 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import { Footer, Navbar, ScrollToTop } from './components'
 import { useDispatch, useSelector } from 'react-redux'
 import authService from './appwrite/auth'
-import { login, logout, addDetails, removeDetails } from './store/authSlice'
+import { login, logout, addDetails, removeDetails, changeLoader } from './store/authSlice'
 import dbService from './appwrite/data'
 import ReactGA from "react-ga4";
 import { ToastContainer } from "react-toastify";
@@ -19,7 +19,6 @@ const App = () => {
   const userData = useSelector((state) => state.auth.userData);
   const dispatch = useDispatch();
   const [showNavbar, setShowNavbar] = useState(false);
-  const [loading, setLoading] = useState(false);
 
 
   useEffect(() => {
@@ -38,7 +37,7 @@ const App = () => {
 
   useEffect(() => {
     if (!userData) return;  // Return early if no userId
-    setLoading(true);
+    dispatch(changeLoader(true));
 
     dbService.getPost(userData.$id)
       .then((data) => {
@@ -48,7 +47,7 @@ const App = () => {
         dispatch(removeDetails())
       })
       .finally(() => {
-        setLoading(false);
+        dispatch(changeLoader(false));
       });
   }, [userData]);
   // console.log(userData);
@@ -66,7 +65,12 @@ const App = () => {
       .catch((error) => {
         console.log("User can't be logged in, error in App.jsx", error.message)
       })
+      .finally(() => {
+        dispatch(changeLoader(false));
+      })
   }, [])
+
+
 
 
   return (
